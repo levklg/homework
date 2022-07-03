@@ -1,0 +1,3 @@
+rootProject.name = 'HelloOtus'
+include 'hw01-gradle'
+
