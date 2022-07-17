@@ -24,6 +24,7 @@
 hs_err_pid*
 
 # Ignore Gradle project-specific cache directory
+<<<<<<< HEAD
 .gradle
 /buildSrc/.gradle/
 
@@ -34,10 +35,25 @@ buildSrc/.gradle/
 buildSrc/build
 build/build
 buildSrc/.gradle
+hw01-gradle/build
 out
+=======
+
+/buildSrc/.gradle/
+
+# Ignore Gradle build output directory
+build
+out
+.idea/
+.gradle/
+>>>>>>> master
 
 #Idea
 *.iml
 *.iws
 *.ipr
+<<<<<<< HEAD
 *.idea
+=======
+*.idea
+>>>>>>> master
