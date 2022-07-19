@@ -1,4 +1,4 @@
-
+package java;
 
 public class Customer {
     private final long id;
