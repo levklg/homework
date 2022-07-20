@@ -4,9 +4,9 @@ public class CustomerReverseOrder <T> {
 
     //todo: 2. надо реализовать методы этого класса
     //надо подобрать подходящую структуру данных, тогда решение будет в "две строчки"
-    private  final  ArrayList <T> arrayList = new ArrayList<T>();
+    private  final  ArrayList <Customer> arrayList = new ArrayList<>();
     public void add(Customer customer) {
-      this.arrayList.add((T) customer);
+      this.arrayList.add( customer);
     }
 
     public Customer take() {
