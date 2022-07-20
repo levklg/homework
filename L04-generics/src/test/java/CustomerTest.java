@@ -33,7 +33,7 @@ class CustomerTest {
     @DisplayName("Объект Customer как ключ в карте")
     void customerAsKeyTest() {
         //given
-        final long customerId = 1L;
+        final long customerId = 1;
         Customer customer = new Customer(customerId, "Ivan", 233);
         Map<Customer, String> map = new HashMap<>();
 
@@ -119,7 +119,7 @@ class CustomerTest {
     }
 
     @Test
-    @Disabled //надо удалить
+ //   @Disabled //надо удалить
     @DisplayName("Возвращание в обратном порядке")
     void reverseOrderTest() {
         //given
