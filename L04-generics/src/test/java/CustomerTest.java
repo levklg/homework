@@ -19,7 +19,7 @@ class CustomerTest {
         //given
         String expectedName = "updatedName";
         String name = "nameVas";
-        Customer customer = new Customer(1, name, 2);
+       Customer customer = new Customer(1, name, 2);
 
         //when
         customer.setName(expectedName);
@@ -29,7 +29,7 @@ class CustomerTest {
     }
 
     @Test
-    @Disabled //надо удалить
+  //  @Disabled //надо удалить
     @DisplayName("Объект Customer как ключ в карте")
     void customerAsKeyTest() {
         //given
@@ -42,7 +42,11 @@ class CustomerTest {
 
         //when
         long newScore = customer.getScores() + 10;
-        String factData = map.get(new Customer(customerId, "IvanChangedName", newScore));
+        //String factData = map.get(new Customer(customerId, "IvanChangedName", newScore));
+        customer.setScores(newScore);
+        map.put(customer,expectedData);
+
+        String factData = map.get(customer);
 
         //then
         assertThat(factData).isEqualTo(expectedData);
@@ -50,14 +54,17 @@ class CustomerTest {
         //when
         long newScoreSecond = customer.getScores() + 20;
         customer.setScores(newScoreSecond);
+        map.put(customer,expectedData);
         String factDataSecond = map.get(customer);
+
+
 
         //then
         assertThat(factDataSecond).isEqualTo(expectedData);
     }
 
     @Test
-    @Disabled //надо удалить
+  //  @Disabled //надо удалить
     @DisplayName("Сортировка по полю score, итерация по возрастанию")
     void scoreSortingTest() {
         //given
@@ -97,7 +104,7 @@ class CustomerTest {
     }
 
     @Test
-    @Disabled //надо удалить
+   // @Disabled //надо удалить
     @DisplayName("Модификация коллекции")
     void mutationTest() {
         //given
