@@ -6,6 +6,7 @@ import org.junit.jupiter.api.Test;
 
 import java.util.HashMap;
 import java.util.Map;
+import java.util.TreeMap;
 
 import static org.assertj.core.api.AssertionsForClassTypes.assertThat;
 
@@ -72,6 +73,7 @@ class CustomerTest {
         Customer customer2 = new Customer(2, "Petr", 11);
         Customer customer3 = new Customer(3, "Pavel", 888);
 
+
         CustomerService customerService = new CustomerService();
         customerService.add(customer1, "Data1");
         customerService.add(customer2, "Data2");
@@ -87,14 +89,15 @@ class CustomerTest {
         // a key-value mapping associated with the least key strictly greater than the given key, or null if there is no such key.
         Map.Entry<Customer, String> middleScore = customerService.getNext(new Customer(10, "Key", 20));
         //then
-        assertThat(middleScore.getKey()).isEqualTo(customer1);
+       assertThat(middleScore.getKey()).isEqualTo(customer1);
+
         middleScore.getKey().setScores(10000);
         middleScore.getKey().setName("Vasy");
 
         //when
         Map.Entry<Customer, String> biggestScore = customerService.getNext(customer1);
         //then
-        assertThat(biggestScore.getKey()).isEqualTo(customer3);
+       assertThat(biggestScore.getKey()).isEqualTo(customer3);
 
         //when
         Map.Entry<Customer, String> notExists = customerService.getNext(new Customer(100, "Not exists", 20000));
